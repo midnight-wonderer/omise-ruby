@@ -17,7 +17,7 @@ module Omise
     end
 
     def load_response(response)
-      object = JSON.load(response)
+      object = JSON.parse(response)
 
       if object["object"] == "error"
         raise Omise::Error, object
